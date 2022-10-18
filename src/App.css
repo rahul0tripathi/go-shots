@@ -1,0 +1,5 @@
+.dropdown-menu {
+  max-height: 50vh;
+  max-width: 60vw;
+  overflow-y: scroll;
+}

@@ -1,4 +1,4 @@
-import axios from 'axios'
+const { default: axios } = require('axios')
 
 export default async function run(request, response) {
   const resp = await axios.post(

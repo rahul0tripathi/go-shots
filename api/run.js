@@ -15,6 +15,6 @@ export default async function run(request, response) {
   const data = await resp.json()
   response.status(200).json({
     err: data.Errors,
-    body: data.Events
+    events: data.Events
   })
 }

@@ -6,13 +6,14 @@ export default async function fmt(request, response) {
     headers: {
       'content-type': 'application/x-www-form-urlencoded'
     },
-    body: {
+    body: new URLSearchParams({
       body: request.body.code,
       imports: true
-    }
+    })
   })
-  console.log(resp, resp.json())
+
   const data = resp.json()
+  console.log(resp, data)
   response.status(200).json({
     err: data.Error,
     body: data.Body

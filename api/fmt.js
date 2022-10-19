@@ -1,4 +1,5 @@
-import fetch from 'node-fetch'
+const fetch = require('node-fetch')
+
 export default async function fmt(request, response) {
   console.log('called')
   const resp = await fetch('https://go.dev/_/fmt?backend=', {

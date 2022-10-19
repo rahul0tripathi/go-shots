@@ -11,7 +11,7 @@ export default async function fmt(request, response) {
       imports: true
     })
   })
-  const data = response.json()
+  const data = resp.json()
   response.status(200).json({
     err: data.Error,
     body: data.Body

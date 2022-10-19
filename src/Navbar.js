@@ -25,12 +25,12 @@ export function NavbarComponent({
     }
   }
   async function runCode() {
-    setExecState(['started execution'])
+    setExecState([new Date().toDateString(), 'started execution ...'])
     const formatted = await fmt(val)
     if (formatted.err == '') {
       setVal(formatted.body)
-      setExecState((execState) => [...execState, 'formatted code with fmt'])
-      setExecState((execState) => [...execState, 'execution started'])
+      setExecState((execState) => [...execState, 'formatted code with fmt ...'])
+      setExecState((execState) => [...execState, 'execution started ...'])
       const response = await run(formatted.body)
 
       if (response.err == '') {
@@ -85,7 +85,7 @@ export function NavbarComponent({
             </NavDropdown>
           </Nav>
           <Button
-            variant="danger"
+            variant="success"
             className="d-flex"
             style={{ padding: '10px 40px 10px 40px ' }}
             onClick={runCode}

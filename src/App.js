@@ -53,7 +53,12 @@ func main()  {
         body
         bg="dark"
         text="white"
-        style={{ height: '20vh', margin: '10px', overflowY: 'scroll' }}
+        style={{
+          height: '24vh',
+          overflowY: 'scroll',
+          borderRadius: '0px',
+          borderLeft: '8px solid green'
+        }}
       >
         {executionState.map((v, i) => {
           return <div key={i}>{v}</div>

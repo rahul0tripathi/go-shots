@@ -61,7 +61,11 @@ func main()  {
         }}
       >
         {executionState.map((v, i) => {
-          return <div key={i}>{v}</div>
+          return (
+            <div key={i} style={{ whiteSpace: 'pre-line' }}>
+              {v}
+            </div>
+          )
         })}
       </Card>
     </>

@@ -12,7 +12,7 @@ export default async function run(request, response) {
       withVet: true
     })
   })
-  const data = resp.json()
+  const data = await resp.json()
   response.status(200).json({
     err: data.Errors,
     body: data.Events

@@ -21,6 +21,9 @@ func constructPlayfairMatrix(key string) ([5][5]byte, map[byte]coordinate) {
 	referenceMatrix := map[byte]bool{}
 	indexMap := map[byte]coordinate{}
 	for _, v := range key {
+		if byte(v) == 74 {
+			continue
+		}
 		if _, ok := referenceMatrix[byte(v)]; !ok {
 			matrix[i][j] = byte(v)
 			indexMap[byte(v)] = coordinate{

@@ -6,7 +6,7 @@ import (
 )
 
 const SECURE_KEY = "PASSWORD"
-const PLAIN_TEXT = "ENCRYPT ME DADDY"
+const PLAIN_TEXT = "ENCRYPT IJ"
 
 type coordinate struct {
 	x int

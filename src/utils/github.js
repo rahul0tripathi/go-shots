@@ -7,12 +7,14 @@ export const getAllFilesInRepo = async () => {
   const response = await axios.get(
     ` https://api.github.com/repos/${repoURI}/git/trees/master?recursive=1`
   )
-  const files = response.data.tree.map((v) => {
-    return {
-      fileName: v.path,
-      resourceURI: v.url
-    }
-  })
+  const files = response.data.tree
+    .filter((v) => v.path.includes('_shots.go'))
+    .map((v) => {
+      return {
+        fileName: v.path,
+        resourceURI: v.url
+      }
+    })
   console.log(files)
   return files
 }

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package maths_shots
 
 /*
 EuclideanGcd - euclidean algorithm calculates the gcd(a,b)
@@ -35,9 +33,4 @@ func ExtendedEuclidean(a, b, xa, ya, xb, yb int) (int, int, int) {
 	q := a / b
 	xa, xb, ya, yb = xb, xa-q*xb, yb, ya-q*yb
 	return ExtendedEuclidean(b, a%b, xa, ya, xb, yb)
-}
-
-func main() {
-	fmt.Println(EuclideanGcd(18, 12))
-	fmt.Println(ExtendedEuclidean(1759, 550, 1, 0, 0, 1))
 }

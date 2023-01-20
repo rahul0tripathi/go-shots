@@ -1,12 +1,9 @@
-package main
+package shots_crypto
 
 import (
 	"fmt"
 	"strings"
 )
-
-const SECURE_KEY = "PASSWORD"
-const PLAIN_TEXT = "ENCRYPT IJ"
 
 type coordinate struct {
 	x int
@@ -145,12 +142,12 @@ DECRYPT:
 	return decrypted, nil
 }
 
-func encryptAndDecrypt(key string, plainText string) {
+func EncryptAndDecrypt(key string, plainText string) {
 	matrix, indexMap := constructPlayfairMatrix(key)
 	logMatrix(matrix)
 	fmt.Printf("ENCRYPTING := %s \n", plainText)
 	fmt.Println("-------------------------------")
-	encrypted, err := encrypt(PLAIN_TEXT, matrix, indexMap)
+	encrypted, err := encrypt(plainText, matrix, indexMap)
 	if err != nil {
 		panic(err)
 	}
@@ -196,8 +193,4 @@ func wrapIndex(i int) int {
 		return 4
 	}
 	return i % 5
-}
-
-func main() {
-	encryptAndDecrypt(SECURE_KEY, PLAIN_TEXT)
 }

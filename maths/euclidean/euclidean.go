@@ -1,4 +1,4 @@
-package maths_shots
+package euclidean
 
 /*
 EuclideanGcd - euclidean algorithm calculates the gcd(a,b)

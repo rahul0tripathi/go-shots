@@ -1,4 +1,6 @@
-package maths_shots
+package gf_p
+
+import "github.com/rahul0tripathi/go-shots/maths/euclidean"
 
 type GfP struct {
 	Field int
@@ -40,7 +42,7 @@ func Sub(a *GfPItem, b *GfPItem) *GfPItem {
 }
 
 func Div(a *GfPItem, b *GfPItem) *GfPItem {
-	_, bInv, _ := ExtendedEuclidean(a.parent.Field, b.Value, 1, 0, 0, 1)
+	_, bInv, _ := euclidean.ExtendedEuclidean(a.parent.Field, b.Value, 1, 0, 0, 1)
 	if bInv < 0 {
 		for bInv < 0 {
 			bInv += a.parent.Field

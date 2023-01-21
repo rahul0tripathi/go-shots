@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	maths_shots "github.com/rahul0tripathi/go-shots/maths"
+	maths_shots "github.com/rahul0tripathi/go-shots/maths/gf_p"
 )
 
 func main() {

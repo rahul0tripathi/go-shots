@@ -1,4 +1,4 @@
-package shots_crypto
+package playfair
 
 import (
 	"fmt"

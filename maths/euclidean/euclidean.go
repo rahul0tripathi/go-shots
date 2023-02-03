@@ -26,11 +26,15 @@ ExtendedEuclidean - helps find (x,y) such that ax + by = gcd(a,b)
 	r(n) = r(n-2) mod r(n-1)	q(n) = r(n-2)/r(n-1)	x(n) = x(n-2) - q*x(n-1), y(n) = y(n-2) - q*y(n-1)
 	r(n+1) = r(n-1) mod r(n) == 0;  x = x(n); y = y(n)
 */
-func ExtendedEuclidean(a, b, xa, ya, xb, yb int) (int, int, int) {
+func extendedEuclidean(a, b, xa, ya, xb, yb int) (int, int, int) {
 	if b == 0 {
 		return xa, ya, a
 	}
 	q := a / b
 	xa, xb, ya, yb = xb, xa-q*xb, yb, ya-q*yb
-	return ExtendedEuclidean(b, a%b, xa, ya, xb, yb)
+	return extendedEuclidean(b, a%b, xa, ya, xb, yb)
+}
+
+func ExtendedEuclidean(a, b int) (int, int, int) {
+	return extendedEuclidean(a, b, 1, 0, 0, 1)
 }
